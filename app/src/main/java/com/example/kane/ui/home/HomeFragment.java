@@ -1,5 +1,6 @@
 package com.example.kane.ui.home;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,11 +70,12 @@ public class HomeFragment extends Fragment {
 
     private void loadCuisine(){
         FirebaseRecyclerAdapter<Cuisine, CuisineViewHolder> adapter = new FirebaseRecyclerAdapter<Cuisine, CuisineViewHolder>(Cuisine.class, R.layout.cuisine_item, CuisineViewHolder.class, cuisine) {
+            @SuppressLint("SetTextI18n")
             @Override
             protected void populateViewHolder(CuisineViewHolder cuisineViewHolder, Cuisine cuisine, int i) {
                 cuisineViewHolder.txtCuisineName.setText(cuisine.getName());
-                cuisineViewHolder.txtCuisineCount.setText(cuisine.getCount());
-                //Picasso.get().load("https://i.ibb.co/LgN44bj/Japanese.png").into(cuisineViewHolder.cuisineImage);
+                cuisineViewHolder.txtCuisineCount.setText("Search "+cuisine.getCount()+" Restaurants");
+                Picasso.get().load(cuisine.getImage()).into(cuisineViewHolder.cuisineImage);
                 final Cuisine clickItem = cuisine;
                 cuisineViewHolder.setItemClickListener(new ItemClickListener() {
                     @Override

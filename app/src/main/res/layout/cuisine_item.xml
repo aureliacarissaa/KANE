@@ -12,25 +12,29 @@
 
         <ImageView
             android:id="@+id/cuisine_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/japanese" />
+            android:src="@drawable/japanese"
+            android:foreground="@color/overlay"/>
 
         <TextView
             android:id="@+id/cuisine_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="44dp"
             android:text="name"
             android:textColor="@color/white"
+            android:textSize="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cuisine_image"
+            app:layout_constraintVertical_bias="0.266" />
 
         <TextView
             android:id="@+id/cuisine_count"
@@ -38,11 +42,13 @@
             android:layout_height="wrap_content"
             android:text="count"
             android:textColor="@color/white"
+            android:textSize="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.505"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.737" />
+            app:layout_constraintVertical_bias="0.761" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
