@@ -18,9 +18,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.kane.Interface.ItemClickListener;
 import com.example.kane.Model.Area;
 import com.example.kane.Model.Cuisine;
+import com.example.kane.Model.Trending;
 import com.example.kane.R;
 import com.example.kane.ViewHolder.AreaViewHolder;
 import com.example.kane.ViewHolder.CuisineViewHolder;
+import com.example.kane.ViewHolder.TrendingViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -31,11 +33,13 @@ public class HomeFragment extends Fragment {
     FirebaseDatabase database;
     DatabaseReference cuisine;
     DatabaseReference area;
+    DatabaseReference trending;
 
     RecyclerView recycler_cuisine;
     RecyclerView.LayoutManager layoutManager;
 
     RecyclerView recycler_area;
+    RecyclerView recycler_trending;
 
     public HomeFragment(){
 
@@ -53,6 +57,7 @@ public class HomeFragment extends Fragment {
         database = FirebaseDatabase.getInstance();
         cuisine = database.getReference("Cuisine");
         area = database.getReference("Area");
+        trending = database.getReference("Trending");
 
         //load cuisine
         recycler_cuisine = view.findViewById(R.id.recycler_cuisine);
@@ -65,7 +70,25 @@ public class HomeFragment extends Fragment {
 
         loadArea();
 
+        recycler_trending = view.findViewById(R.id.recycler_trending);
+        recycler_trending.setLayoutManager(new LinearLayoutManager(view.getContext(), LinearLayoutManager.HORIZONTAL, false));
+
+        loadTrending();
+
         return view;
+    }
+
+    private void loadTrending() {
+        FirebaseRecyclerAdapter<Trending, TrendingViewHolder> adapter = new FirebaseRecyclerAdapter<Trending, TrendingViewHolder>(Trending.class, R.layout.trending_item, TrendingViewHolder.class, trending) {
+            @SuppressLint("SetTextI18n")
+            @Override
+            protected void populateViewHolder(TrendingViewHolder trendingViewHolder, Trending trending, int i) {
+                trendingViewHolder.txtTrendingName.setText(trending.getName());
+                trendingViewHolder.txtTrendingInfo.setText(trending.getPriceTag()+" • "+trending.getType()+" • "+trending.getStars()+" ("+trending.getReviews()+")");
+                Picasso.get().load(trending.getImage()).into(trendingViewHolder.trendingImage);
+            }
+        };
+        recycler_trending.setAdapter(adapter);
     }
 
     private void loadCuisine(){
