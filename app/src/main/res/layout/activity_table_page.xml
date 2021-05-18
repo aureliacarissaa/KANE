@@ -10,124 +10,105 @@
         android:id="@+id/back_button"
         android:layout_width="39dp"
         android:layout_height="33dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.041"
+        android:layout_margin="@dimen/margin16"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.02"
         app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.224"
-        app:srcCompat="@drawable/table" />
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:adjustViewBounds="true"
+        android:cropToPadding="false"
+        app:layout_constraintTop_toBottomOf="@+id/letsChoose"
+        app:srcCompat="@drawable/table"
+        tools:layout_editor_absoluteX="0dp" />
 
     <TextView
         android:id="@+id/restaurant_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:text="restaurant name"
-        app:layout_constraintBottom_toTopOf="@+id/restaurant_location"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
+        android:layout_margin="@dimen/margin16"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/restaurant_name"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font32"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/back_button" />
 
     <TextView
         android:id="@+id/restaurant_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
+        android:layout_marginStart="@dimen/margin16"
+        android:layout_marginTop="@dimen/zero"
+        android:fontFamily="@font/poppins_bold"
         android:text="restauran location"
-        app:layout_constraintBottom_toTopOf="@+id/letsChoose"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/restaurant_name" />
 
     <TextView
         android:id="@+id/letsChoose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Let's choose the perfect table"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.065"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.151" />
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="@string/lets_choose_the_perfect_table"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@+id/restaurant_location"
+        tools:layout_editor_absoluteX="16dp" />
 
     <TextView
         android:id="@+id/availableTableTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Available Table"
-        app:layout_constraintBottom_toTopOf="@+id/spinner"
+        android:textColor="@color/dark_green"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.971" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="134dp"
         android:layout_height="41dp"
-        app:layout_constraintBottom_toTopOf="@+id/reservationNotesTitle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.921" />
+        app:layout_constraintTop_toBottomOf="@+id/availableTableTitle"
+        tools:layout_editor_absoluteX="138dp" />
 
     <TextView
         android:id="@+id/reservationNotesTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="@dimen/margin16"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
         android:text="Reservation Notes"
+        android:textColor="@color/dark_green"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/reservationNotes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.998" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/reservationNotes"
-        android:layout_width="334dp"
-        android:layout_height="94dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_margin="@dimen/margin16"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toTopOf="@+id/continuetofood"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.996" />
+        tools:layout_editor_absoluteX="38dp" />
 
     <Button
         android:id="@+id/continuetofood"
-        android:layout_width="337dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
+        android:layout_margin="@dimen/margin16"
         android:text="continue to food"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.472"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.949" />
+        tools:layout_editor_absoluteX="16dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

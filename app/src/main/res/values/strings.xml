@@ -15,6 +15,8 @@
     <string name="name">NAME</string>
     <string name="sign_up">Sign Up</string>
     <string name="already_have_account">Already have account?</string>
+    <string name="restaurant_name">Lorem Ipsum Resto</string>
+    <string name="lets_choose_the_perfect_table">Let\'s choose the perfect table.</string>
     <string-array name="table_array">
         <item>A1</item>
         <item>A2</item>
