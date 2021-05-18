@@ -7,17 +7,21 @@ public class Trending {
     private String Stars;
     private String Reviews;
     private String Type;
+    private String Location;
+    private String Info;
 
     public Trending() {
     }
 
-    public Trending(String name, String priceTag, String image, String stars, String reviews, String type) {
+    public Trending(String name, String priceTag, String image, String stars, String reviews, String type, String location, String info) {
         Name = name;
         PriceTag = priceTag;
         Image = image;
         Stars = stars;
         Reviews = reviews;
         Type = type;
+        Location = location;
+        Info = info;
     }
 
     public String getName() {
@@ -66,5 +70,21 @@ public class Trending {
 
     public void setType(String type) {
         Type = type;
+    }
+
+    public String getLocation() {
+        return Location;
+    }
+
+    public void setLocation(String location) {
+        Location = location;
+    }
+
+    public String getInfo() {
+        return Info;
+    }
+
+    public void setInfo(String info) {
+        Info = info;
     }
 }

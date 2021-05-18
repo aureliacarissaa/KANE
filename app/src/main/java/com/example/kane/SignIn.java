@@ -24,6 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 public class SignIn extends AppCompatActivity {
     EditText edtPhone, edtPassword;
     Button btnSignIn;
+    TextView btnRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class SignIn extends AppCompatActivity {
         edtPhone = findViewById(R.id.editTextPhone);
         edtPassword = findViewById(R.id.editTextTextPassword);
         btnSignIn = findViewById(R.id.button);
+        btnRegister = findViewById(R.id.createNewAccount);
 
         //init firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -76,6 +78,14 @@ public class SignIn extends AppCompatActivity {
 
                     }
                 });
+            }
+        });
+
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent signUp = new Intent(SignIn.this, SignUp.class);
+                startActivity(signUp);
             }
         });
     }
