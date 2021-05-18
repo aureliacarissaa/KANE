@@ -29,7 +29,8 @@ android {
 }
 
 dependencies {
-
+    implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
+    implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
     implementation 'com.github.travijuu:numberpicker:1.0.7'
     implementation 'com.github.GoodieBag:HorizontalPicker:v1.0'
     implementation 'androidx.appcompat:appcompat:1.2.0'

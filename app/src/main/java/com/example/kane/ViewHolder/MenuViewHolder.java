@@ -14,15 +14,13 @@ public class MenuViewHolder extends RecyclerView.ViewHolder {
     public TextView txtMenuPrice;
     public TextView txtMenuInfo;
     public ImageView menuImage;
-    public NumberPicker numberPicker;
 
     public MenuViewHolder(View itemView) {
         super(itemView);
 
-        txtMenuName = (TextView) itemView.findViewById(R.id.menu_name);
-        txtMenuPrice = (TextView) itemView.findViewById(R.id.menu_price);
-        txtMenuInfo = (TextView) itemView.findViewById(R.id.menu_info);
-        menuImage = (ImageView) itemView.findViewById(R.id.menu_image);
-        numberPicker = (NumberPicker) itemView.findViewById(R.id.number_picker);
+        txtMenuName = itemView.findViewById(R.id.menu_name);
+        txtMenuPrice = itemView.findViewById(R.id.menu_price);
+        txtMenuInfo = itemView.findViewById(R.id.menu_info);
+        menuImage = itemView.findViewById(R.id.menu_image);
     }
 }

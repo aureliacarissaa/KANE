@@ -13,7 +13,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.kane.Database.Database;
 import com.example.kane.Model.Menu;
+import com.example.kane.Model.Order;
 import com.example.kane.Model.Trending;
 import com.example.kane.ViewHolder.MenuViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -72,7 +74,7 @@ public class MenuPage extends AppCompatActivity {
         btnSummary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MenuViewHolder menuViewHolder;
+
             }
         });
     }
@@ -91,7 +93,6 @@ public class MenuPage extends AppCompatActivity {
                 Picasso.get().load(menu.getImage()).into(menuViewHolder.menuImage);
             }
         };
-        Log.d("tag",""+adapter.getItemCount());
         recycler_menu.setAdapter(adapter);
     }
 

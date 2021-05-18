@@ -30,7 +30,7 @@ public class SignUp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        ((AppCompatActivity) this).getSupportActionBar().hide();
+        this.getSupportActionBar().hide();
 
         setContentView(R.layout.activity_sign_up);
 
@@ -62,7 +62,7 @@ public class SignUp extends AppCompatActivity {
                         }
                         else {
                             mDialog.dismiss();
-                            User user = new User(edtName.getText().toString(), edtPassword.getText().toString());
+                            User user = new User(edtName.getText().toString(), edtPassword.getText().toString(), edtPhone.getText().toString());
                             table_user.child(edtPhone.getText().toString()).setValue(user);
                             Toast.makeText(SignUp.this, "Successfully registered!", Toast.LENGTH_SHORT).show();
                             finish();
